@@ -21,11 +21,11 @@ async function fetchDiscordStatus() {
     }
 
     const status = data.data.discord_status;
-    const emoji = statusEmoji[status] || "❔";
+    const emoji = statusEmoji[status] || "?";
     statusElement.textContent = `${emoji} Discord status: ${status.toUpperCase()}`;
   } catch (err) {
     console.error("Error fetching Discord status:", err);
-    statusElement.textContent = "❌ Status couldn't load";
+    statusElement.textContent = "couldnt load discord status";
   }
 }
 
