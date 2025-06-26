@@ -14,7 +14,15 @@ body.dark {
   --link-text: #fff;
 }
 
-
+#discord-status {
+  margin-top: 1.5em;
+  font-weight: 500;
+  color: var(--text);
+  background: var(--link-bg);
+  padding: 0.75em;
+  border-radius: 8px;
+  display: inline-block;
+}
 
 body {
   margin: 0;
