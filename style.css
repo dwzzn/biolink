@@ -13,17 +13,6 @@ body.dark {
   --link-bg: #333;
   --link-text: #fff;
 }
-
-#discord-status {
-  margin-top: 1.5em;
-  font-weight: 500;
-  color: var(--text);
-  background: var(--link-bg);
-  padding: 0.75em;
-  border-radius: 8px;
-  display: inline-block;
-}
-
 body {
   margin: 0;
 font-family: "Montserrat", sans-serif;
@@ -85,7 +74,15 @@ max-width: 500px;
 .link:hover {
   background: #555;
 }
-
+#discord-status {
+  margin-top: 1.5em;
+  font-weight: 500;
+  color: var(--text);
+  background: var(--link-bg);
+  padding: 0.75em;
+  border-radius: 8px;
+  display: inline-block;
+}
 .toggle-theme {
   margin-top: 1.5em;
   padding: 0.5em 1em;
