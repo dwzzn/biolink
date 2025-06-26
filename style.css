@@ -14,10 +14,7 @@ body.dark {
   --link-text: #fff;
 }
 
-body {
-  background: url('https://i.imgur.com/d00gzzB.gif') no-repeat center center fixed;
-  background-size: cover;
-}
+
 
 body {
   margin: 0;
@@ -25,6 +22,8 @@ body {
   background: var(--bg);
   color: var(--text);
   transition: background 0.3s, color 0.3s;
+ background: url('https://i.imgur.com/d00gzzB.gif') no-repeat center center fixed;
+  background-size: cover;
 }
 
 .container {
