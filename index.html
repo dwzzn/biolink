@@ -10,6 +10,7 @@
 </head>
 <body>
   <div class="container">
+
     <img src="https://r2.guns.lol/ed179fc9-7aec-429c-ae96-6628b2716c69.webp" alt="Avatar" class="avatar" />
     <h1 class="name">z</h1>
     <p class="username">@z</p>
@@ -23,6 +24,18 @@
 
     <button class="toggle-theme">gray buttons</button>
   </div>
+<!-- Discord Status Display -->
+<div id="discord-status">Loading Discord status...</div>
+
+<script>
+  fetch("https://api.lanyard.rest/v1/users/1032063009310396487")
+    .then(res => res.json())
+    .then(data => {
+      const status = data.data.discord_status;
+      document.getElementById("discord-status").innerText =
+        "Discord status: " + status.toUpperCase();
+    });
+</script>
 
   <script src="script.js"></script>
 </body>
