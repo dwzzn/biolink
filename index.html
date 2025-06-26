@@ -26,38 +26,6 @@
   </div>
 <!-- status loading -->
 <div id="discord-status">Loading Discord status...</div>
-<!-- discord prescence below -->
-<script>
-  const discordId = "1032063009310396487"; // REPLACE WITH YOUR DISCORD ID PLEASE BRO
-  const statusElement = document.getElementById("discord-status");
-
-  const statusEmoji = {
-    online: "online",
-    idle: "idle",
-    dnd: "dndd",
-    offline: "offline",
-  };
-
-  async function fetchDiscordStatus() {
-    try {
-      const res = await fetch(`https://api.lanyard.rest/v1/users/${discordId}`);
-      const data = await res.json();
-
-      if (!data.success) {
-        throw new Error("you're not being tracked by lanyard");
-      }
-
-      const status = data.data.discord_status;
-      const emoji = statusEmoji[status] || "❔";
-      statusElement.textContent = `${emoji} Discord status: ${status.toUpperCase()}`;
-    } catch (err) {
-      statusElement.textContent = "status couldn't load";
-    }
-  }
-
-  fetchDiscordStatus();
-  setInterval(fetchDiscordStatus, 15000); // 15s not 15k
-</script>
   <script src="script.js"></script>
 </body>
 </html>
