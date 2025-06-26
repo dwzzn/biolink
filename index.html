@@ -27,14 +27,16 @@
 <!-- status loading -->
 <div id="discord-status">Loading Discord status...</div>
 <!-- discord prescence below -->
+<div id="discord-status">Loading Discord status...</div>
+
 <script>
-  const discordId = "1032063009310396487"; // replace with discord id if YOU are using this
+  const discordId = "1032063009310396487"; // REPLACE WITH YOUR DISCORD ID PLEASE BRO
   const statusElement = document.getElementById("discord-status");
 
   const statusEmoji = {
     online: "online",
-    idle: "sleeping",
-    dnd: "dnd",
+    idle: "idle",
+    dnd: "dndd",
     offline: "offline",
   };
 
@@ -43,18 +45,22 @@
       const res = await fetch(`https://api.lanyard.rest/v1/users/${discordId}`);
       const data = await res.json();
 
-      const status = data.data.discord_status;
-      const custom = statusEmoji[status] || "❔";
+      if (!data.success) {
+        throw new Error("you're not being tracked by lanyard");
+      }
 
-      statusElement.textContent = `${custom} Discord status: ${status.toUpperCase()}`;
+      const status = data.data.discord_status;
+      const emoji = statusEmoji[status] || "❔";
+      statusElement.textContent = `${emoji} Discord status: ${status.toUpperCase()}`;
     } catch (err) {
-      statusElement.textContent = "error loadidng status sorry";
+      statusElement.textContent = "status couldn't load";
     }
   }
 
   fetchDiscordStatus();
-  setInterval(fetchDiscordStatus, 15000); // 15s interval, not 15k LMAO
+  setInterval(fetchDiscordStatus, 15000); // 15s not 15k
 </script>
+
   <script src="script.js"></script>
 </body>
 </html>
