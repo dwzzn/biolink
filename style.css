@@ -27,13 +27,15 @@ body {
 }
 
 .container {
-  max-width: 500px;
+max-width: 500px;
   margin: 2em auto;
-  padding: 1em;
+  padding: 1.5em;
   text-align: center;
-  background: var(--card);
-  border-radius: 12px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  background: rgba(255, 255, 255, 0.08); /* translucent white profile lsdjlkd;falsdk;;ffj */
+  backdrop-filter: blur(10px);           /* frosted glass effect */
+  border-radius: 16px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+  transition: background 0.3s ease;
 }
 
 .avatar {
